@@ -1,5 +1,5 @@
 # Overview
-Simple Python app working "like" DynamicDNS, checks every 15 minutes current public IP address with IP in provided DNS A record and if they are different updates record to the new one. If record doesn't exist yet you have to use `create` instead of `patc`h method from `google-api-python-client` package and change app code in `main.py` a little bit
+Simple Python app working "like" DynamicDNS, checks every 15 minutes current public IP address with IP in provided DNS A record and if they are different updates record to the new one. If record doesn't exist yet you have to use `create` instead of `patch` method from `google-api-python-client` package and change app code in `main.py` a little bit
 
 # Prerequirements
 * Docker installed
