@@ -13,8 +13,8 @@ GCP_A_RECORD = os.getenv("GCP_A_RECORD")
 
 # Get current gateway IP by using ifconfig.me website
 def get_current_ip():
+    url = "http://ifconfig.me"
     try:
-        url = "http://ifconfig.me"
         response = requests.get(url)
         return response.text
     except:
@@ -22,8 +22,9 @@ def get_current_ip():
 
 # Resolve DNS name and get current IP in DNS
 def get_current_dns_ip():
+    fqdn = GCP_A_RECORD[:-1]
     try:
-        return socket.gethostbyname(GCP_A_RECORD[:-1])
+        return socket.gethostbyname(fqdn)
     except:
         logging.error(f"Unable to get IP address from DNS name {fqdn}")
 
